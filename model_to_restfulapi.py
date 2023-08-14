@@ -130,7 +130,7 @@ def filter_boxes(detections, confidence_threshold, iou_threshold):
 app = Flask(__name__)
 
 # 加载你的 ONNX 模型（这里以一个简单的示例模型为例）
-onnx_model_path = '/data/zrj/zhihangyuan/yolov5s.onnx'  # 替换为你的模型路径
+onnx_model_path = 'xxxx/xxxx/xxxx'  # 替换为你的模型路径
 session = onnxruntime.InferenceSession(onnx_model_path)
 
 @app.route('/predict', methods=['POST'])
