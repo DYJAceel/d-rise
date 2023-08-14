@@ -160,7 +160,7 @@ def generate_heatmap(pred_result_array,image,api_url,save_dir):
                       (int(result_new_box[2]), int(result_new_box[3])), (0, 0, 255), 5)
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
-        save_path = os.path.join(save_dir,'dyj_test_' + label_names[int(result_class_index[0])] + '_' + str(i) + ".jpg")
+        save_path = os.path.join(save_dir,'xxxxx' + label_names[int(result_class_index[0])] + '_' + str(i) + ".jpg")
 
         cv2.imwrite(save_path, image_with_bbox)
     return 0
@@ -180,7 +180,7 @@ label_names = [
 api_url = "http://localhost:5000/predict"
 
 # 准备输入图片（替换为你的图片路径）
-image_path = "/data/zrj/zhihangyuan/onnx_test_data/000000000009.jpg"
+image_path = "/xxxxx/xxxx.jpg"
 
 image = cv2.imread(image_path)
 generate_heatmap_image = image.copy()
@@ -207,7 +207,7 @@ result = response.json()
 # 输出推断结果
 pred_result_array=np.array(result['result'])
 print("Prediction result:", pred_result_array,type(pred_result_array),pred_result_array.shape)
-save_dir = '/data/zrj/zhihangyuan/YOLO5/yolov5/test_images'
+save_dir = 'xxxx/xxxx'
 print('start generate heatmap')
 generate_heatmap(pred_result_array,generate_heatmap_image,api_url,save_dir)
 print('finish generate')
